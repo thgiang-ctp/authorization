@@ -4,10 +4,11 @@ import { ConfigService } from '@nestjs/config';
 @Injectable()
 export class AppService {
   constructor(private configService: ConfigService) {}
-  getHello(): string {
-    return (
-      'Hello, Reading config: ' +
-      this.configService.get('authorization.mysql.master.db')
-    );
+  getHello() {
+    return {
+      message:
+        'Hello, Reading config: ' +
+        this.configService.get('authorization.mysql.master.db'),
+    };
   }
 }

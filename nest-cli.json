@@ -5,7 +5,8 @@
   "root": "apps/authorization",
   "compilerOptions": {
     "webpack": true,
-    "tsConfigPath": "apps/authorization/tsconfig.app.json"
+    "tsConfigPath": "apps/authorization/tsconfig.app.json",
+    "assets": ["**/*.hbs"]
   },
   "projects": {
     "authorization": {
@@ -14,7 +15,8 @@
       "entryFile": "main",
       "sourceRoot": "apps/authorization/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/authorization/tsconfig.app.json"
+        "tsConfigPath": "apps/authorization/tsconfig.app.json",
+        "assets": ["**/*.hbs"]
       }
     },
     "sso": {
@@ -23,7 +25,8 @@
       "entryFile": "main",
       "sourceRoot": "apps/sso/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/sso/tsconfig.app.json"
+        "tsConfigPath": "apps/sso/tsconfig.app.json",
+        "assets": ["**/*.hbs"]
       }
     }
   }
