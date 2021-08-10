@@ -1,4 +1,30 @@
 {
   "collection": "@nestjs/schematics",
-  "sourceRoot": "src"
+  "sourceRoot": "apps/authorization/src",
+  "monorepo": true,
+  "root": "apps/authorization",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/authorization/tsconfig.app.json"
+  },
+  "projects": {
+    "authorization": {
+      "type": "application",
+      "root": "apps/authorization",
+      "entryFile": "main",
+      "sourceRoot": "apps/authorization/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/authorization/tsconfig.app.json"
+      }
+    },
+    "sso": {
+      "type": "application",
+      "root": "apps/sso",
+      "entryFile": "main",
+      "sourceRoot": "apps/sso/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/sso/tsconfig.app.json"
+      }
+    }
+  }
 }
