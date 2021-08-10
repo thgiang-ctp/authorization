@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  # Database
+  db:
+    image: mariadb:latest
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: p
+      MYSQL_DATABASE: w
+      MYSQL_USER: w
+      MYSQL_PASSWORD: w
+    networks:
+      - wpsite
+  # phpmyadmin
+  phpmyadmin:
+    depends_on:
+      - db
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - '8080:80'
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: p
+    networks:
+      - wpsite
+networks:
+  wpsite:
+volumes:
+  db_data:
